@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">productNew11</string>
+
+
+    <string name="product1"> product name: Iphone 12 64GB</string>
+    <string name="price1"> price: 4500 SR</string>
+    <string name="isVip1"> isVip: yes</string>
+    <string name="quantityNumber1"> quantityNumber: 5</string>
+
+
+    <string name="product2">product name: Samsung Galaxy S21 Ultra</string>
+    <string name="price2"> price: 4500 SR</string>
+    <string name="isVip2"> isVip: no</string>
+    <string name="quantityNumber2"> quantityNumber: 5</string>
+
+
+    <string name="product3"> product name: Xiaomi 11T Pro</string>
+    <string name="price3"> price: 2000 SR</string>
+    <string name="isVip3"> isVip: yes</string>
+    <string name="quantityNumber3"> quantityNumber: 0</string>
+
+
+    <string name="product4">product name: Huawei Y6p</string>
+    <string name="price4"> price: 500 SR</string>
+    <string name="isVip4"> isVip: no</string>
+    <string name="quantityNumber4"> quantityNumber: 0</string>
+
+
+    <string name="product5"> product name: Samsung Galaxy Z Flip3</string>
+    <string name="price5"> price: 5000 SR</string>
+    <string name="isVip5"> isVip: yes</string>
+    <string name="quantityNumber5"> quantityNumber: 70</string>
+
+
+    <string name="product6">product name: Iphone 13</string>
+    <string name="price6"> price: 6000 SR</string>
+    <string name="isVip6"> isVip: yes</string>
+    <string name="quantityNumber6"> quantityNumber: 36</string>
+    <string name="buy">buy</string>
+    <string name="price11">Price1</string>
+    <string name="productname11">productName1</string>
+
+
+</resources>
