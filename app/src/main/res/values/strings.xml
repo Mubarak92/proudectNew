@@ -39,6 +39,9 @@
     <string name="buy">buy</string>
     <string name="price11">Price1</string>
     <string name="productname11">productName1</string>
+    <string name="textview">TextView</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
