@@ -1,59 +1,44 @@
-package com.example.proudectnew11
+    package com.example.proudectnew11
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+    import android.os.Bundle
+    import androidx.fragment.app.Fragment
+    import android.view.LayoutInflater
+    import android.view.View
+    import android.view.ViewGroup
+    import androidx.recyclerview.widget.RecyclerView
+    import com.example.proudectnew11.adabter.itemAdabter
+    import com.example.proudectnew11.data.datasource
+    import com.example.proudectnew11.databinding.FragmentListBinding
+    import com.example.proudectnew11.model.product
+    // هنا بدينا ننل الاشياء من المين لين هنا :
+    class ListFragment : Fragment() { //بعد مانقلنا من المين  نعرف كل شي هنا ب val/var
+        private var _binding: FragmentListBinding? = null // نعرف البايدنق قبل االفانكشن
+        private val binding get() = _binding!! // عشان لا أحط استفهام عند كل فيو اعرفها
+        lateinit var myDataset :List<product>
+        lateinit var recyclerView :RecyclerView
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+            myDataset = datasource().loadProduct()
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ListFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+        }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        override fun onCreateView( // هنا انقل اي شي ماله علاقه في الفيو
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            _binding = FragmentListBinding.inflate(inflater, container, false) // هنا 3 ارقمنت اساسيه الي بين الاقواس
+            val view = binding.root // يسحب كلشي
+            return view // رجع الروت حق البايندق عشان استخدمهم هنا
+        }
+
+
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) { // هنا اقدر امسك واتعامل مع الفيو
+            super.onViewCreated(view, savedInstanceState)
+
+            recyclerView = binding.recyclerView // هنا قدرت امسكها من الxml و احطها في قيمه
+            recyclerView.adapter = itemAdabter(this.requireContext(),myDataset ) // في الفراقمينت اذا بوصل للكونتيكست استخدم ذي الفانكشين عشان اجيب الكونتيكست
+
+            recyclerView.setHasFixedSize(true)
         }
     }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ListFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ListFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
-}

@@ -5,19 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--انقلها من هنا لين fragment-list-->
+<!--حذفنا من هنا الريساايكل -->
+ <androidx.fragment.app.FragmentContainerView
+     android:id="@+id/nav_host"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:name="androidx.navigation.fragment.NavHostFragment"
+     app:defaultNavHost="true"
+     app:navGraph="@navigation/nav_graph"
+/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
