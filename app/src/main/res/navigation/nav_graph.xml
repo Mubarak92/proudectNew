@@ -20,7 +20,7 @@
         android:label="fragment_name"
         tools:layout="@layout/fragment_name" >
         <argument
-            android:name="key1"
+            android:name="phoneName"
             app:argType="string" />
     </fragment>
 </navigation>

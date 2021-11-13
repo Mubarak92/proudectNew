@@ -19,9 +19,6 @@ class nameFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        arguments?.let {
-            proudectName = it.getString(prod).toString() // جايني  ارقمنت راح اخزنه في المتغير بروديكت نيم ذا و كيف اعرفه راح اعرفه بالكي حقه  الي بين القوسين " جيبي الفاليو الي في الكي " من فراقمنت الليسيت
-        }
 
     }
 
@@ -35,7 +32,13 @@ class nameFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.nameProudect.text= proudectName // اخذناها من بروديكت نيم الي فوق و حطيناها بعد اليساوي عشان عشان يعبي التيكست الي الاكس ام ال
+        arguments?.let {
+
+            binding.textView2.text = it.getString("phoneName").toString()
+          //  proudectName = it.getString(prod).toString() // جايني  ارقمنت راح اخزنه في المتغير بروديكت نيم ذا و كيف اعرفه راح اعرفه بالكي حقه  الي بين القوسين " جيبي الفاليو الي في الكي " من فراقمنت الليسيت
+        }
+
+    //    binding.textView2.text = it // اخذناها من بروديكت نيم الي فوق و حطيناها بعد اليساوي عشان عشان يعبي التيكست الي الاكس ام ال
     }
 
        }

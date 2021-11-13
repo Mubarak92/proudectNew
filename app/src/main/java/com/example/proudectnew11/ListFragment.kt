@@ -34,7 +34,6 @@
 
 
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) { // هنا اقدر امسك واتعامل مع الفيو
-            super.onViewCreated(view, savedInstanceState)
 
             recyclerView = binding.recyclerView // هنا قدرت امسكها من الxml و احطها في قيمه
             recyclerView.adapter = itemAdabter(this.requireContext(),myDataset ) // في الفراقمينت اذا بوصل للكونتيكست استخدم ذي الفانكشين عشان اجيب الكونتيكست

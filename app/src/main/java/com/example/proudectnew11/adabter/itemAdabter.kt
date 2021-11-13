@@ -45,22 +45,26 @@ class itemAdabter(
         val item = dataset[position]
         holder.productimg.setImageResource(item.imageProdct)
         holder.priceview.text = item.price
-        holder.name.text = item.name
+        holder.name.text = item.nameId
         holder.Starfav.isVisible = item.isVip
 
         holder.buybutoon.setOnClickListener {
             if (item.quantityNumber > 0) {
                 Toast.makeText(context, "item available", Toast.LENGTH_SHORT).show()
+
+                val action =ListFragmentDirections.actionListFragmentToNameFragment(phoneName = item.nameId)
+                holder.itemView.findNavController()
+                    .navigate(action)
             }
 //            val intent = Intent(context, Activitynew ::class.java )
 //            intent.putExtra(objectPhone.phoneName , item.name)
 //            intent.putExtra(objectPhone.phoneImage ,item.imageProdct )
 //            it.context.startActivity(intent)
             else {
-                val action =
-                    ListFragmentDirections.actionListFragmentToNameFragment(item.name) //هذا بدل الانتنت يروح من والى
-                holder.buybutoon.findNavController()
-                    .navigate(action) // الاكشن الي تخزن فوق يرسل للنفقيت كونترول
+
+                Toast.makeText(context, "item available", Toast.LENGTH_SHORT).show()
+
+                // الاكشن الي تخزن فوق يرسل للنفقيت كونترول
 
             }
 
